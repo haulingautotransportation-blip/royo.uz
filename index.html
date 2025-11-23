@@ -2,49 +2,279 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uzbekistan Logistics Platform</title>
+  <title>Uzbekistan National Logistics Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-    .lang-switch { display: flex; gap: 10px; margin-bottom: 20px; }
-    button { padding: 8px 14px; border: none; background: #333; color: #fff; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #555; }
-    .container { background: #fff; max-width: 900px; margin: auto; padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    h1 { margin-top: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { background: #050816; color: #f5f5f5; line-height: 1.6; }
+    header { padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; backdrop-filter: blur(10px); background: rgba(5,8,22,0.9); z-index: 10; }
+    .logo { font-weight: 700; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .lang-switch { display: flex; gap: 8px; }
+    .lang-btn { border: 1px solid rgba(255,255,255,0.3); background: transparent; color: #f5f5f5; padding: 6px 10px; border-radius: 999px; font-size: 0.8rem; cursor: pointer; }
+    .lang-btn.active { background: #f97316; border-color: #f97316; color: #050816; }
+    main { padding: 40px 8% 80px; max-width: 1080px; margin: 0 auto; }
+    .hero { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr); gap: 40px; align-items: center; margin-bottom: 60px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(15,118,110,0.18); border-radius: 999px; font-size: 0.75rem; margin-bottom: 16px; }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 10px #22c55e; }
+    h1 { font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 16px; }
+    h1 span { color: #f97316; }
+    .hero-text { color: #d4d4d8; margin-bottom: 16px; }
+    .hero-sub { font-size: 0.9rem; color: #a1a1aa; margin-bottom: 20px; }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 10px; }
+    .stat { min-width: 120px; }
+    .stat strong { font-size: 1.4rem; display: block; }
+    .card { background: radial-gradient(circle at top left, rgba(248,250,252,0.12), transparent 55%), #0b1020; border-radius: 20px; padding: 20px; border: 1px solid rgba(148,163,184,0.25); box-shadow: 0 18px 40px rgba(15,23,42,0.9); }
+    .pill { display: inline-block; font-size: 0.75rem; padding: 4px 10px; border-radius: 999px; background: rgba(15,23,42,0.9); border: 1px solid rgba(148,163,184,0.5); margin-bottom: 8px; }
+    .card h2 { font-size: 1rem; margin-bottom: 10px; }
+    .tag-list { margin-top: 10px; font-size: 0.8rem; color: #a1a1aa; }
+    section { margin-bottom: 40px; }
+    section h2 { font-size: 1.3rem; margin-bottom: 10px; }
+    section p { color: #d4d4d8; margin-bottom: 10px; font-size: 0.95rem; }
+    ul { padding-left: 18px; color: #d4d4d8; font-size: 0.95rem; }
+    li + li { margin-top: 4px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .mini-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 6px; }
+    .contact-box { background: rgba(15,23,42,0.85); border-radius: 16px; padding: 18px; border: 1px dashed rgba(148,163,184,0.6); font-size: 0.9rem; }
+    .contact-box a { color: #f97316; text-decoration: none; }
+    footer { padding: 20px 8% 30px; border-top: 1px solid rgba(148,163,184,0.4); font-size: 0.8rem; color: #9ca3af; text-align: center; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      header { padding-inline: 16px; }
+      main { padding-inline: 16px; }
+    }
   </style>
 </head>
 <body>
+<header>
+  <div class="logo">UzLogix • National Logistics Platform</div>
   <div class="lang-switch">
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('uz')">O'zbekcha</button>
-    <button onclick="setLang('ru')">Русский</button>
+    <button class="lang-btn active" data-lang="uz">UZ</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span data-i18n="badge"></span>
+      </div>
+      <h1><span data-i18n="hero_title_1"></span> <span>Uzbekistan</span> <span data-i18n="hero_title_2"></span></h1>
+      <p class="hero-text" data-i18n="hero_text"></p>
+      <p class="hero-sub" data-i18n="hero_sub"></p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>120k+</strong>
+          <span data-i18n="stat1"></span>
+        </div>
+        <div class="stat">
+          <strong>15%</strong>
+          <span data-i18n="stat2"></span>
+        </div>
+        <div class="stat">
+          <strong>3–5 yrs</strong>
+          <span data-i18n="stat3"></span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="pill" data-i18n="card_pill"></div>
+      <h2 data-i18n="card_title"></h2>
+      <p data-i18n="card_text"></p>
+      <div class="tag-list" data-i18n="card_tags"></div>
+    </div>
   </div>
 
-  <div class="container">
-    <h1 id="title">Modern Logistics Platform for Uzbekistan</h1>
-    <p id="desc">A nationwide digital system connecting shippers, carriers, brokers, and government regulators on one platform.</p>
-  </div>
+  <!-- SECTIONS -->
+  <section>
+    <h2 data-i18n="sec1_title"></h2>
+    <p data-i18n="sec1_p1"></p>
+    <p data-i18n="sec1_p2"></p>
+    <ul>
+      <li data-i18n="sec1_li1"></li>
+      <li data-i18n="sec1_li2"></li>
+      <li data-i18n="sec1_li3"></li>
+    </ul>
+  </section>
 
-  <script>
-    const content = {
-      en: {
-        title: "Modern Logistics Platform for Uzbekistan",
-        desc: "A nationwide digital system connecting shippers, carriers, brokers, and government regulators on one platform."
-      },
-      uz: {
-        title: "Oʻzbekiston uchun zamonaviy logistika platformasi",
-        desc: "Yuk joʻnatuvchi, tashuvchi, broker va davlat organlarini yagona raqamli tizim orqali bogʻlovchi milliy platforma."
-      },
-      ru: {
-        title: "Современная логистическая платформа для Узбекистана",
-        desc: "Общенациональная цифровая система, объединяющая грузоотправителей, перевозчиков, брокеров и государственные структуры на одной платформе."
-      }
-    };
+  <section class="grid-2">
+    <div>
+      <h2 data-i18n="sec2_title"></h2>
+      <p data-i18n="sec2_p1"></p>
+      <ul>
+        <li data-i18n="sec2_li1"></li>
+        <li data-i18n="sec2_li2"></li>
+        <li data-i18n="sec2_li3"></li>
+      </ul>
+    </div>
+    <div>
+      <h2 data-i18n="sec3_title"></h2>
+      <p data-i18n="sec3_p1"></p>
+      <ul>
+        <li data-i18n="sec3_li1"></li>
+        <li data-i18n="sec3_li2"></li>
+        <li data-i18n="sec3_li3"></li>
+      </ul>
+    </div>
+  </section>
 
-    function setLang(lang) {
-      document.getElementById('title').innerText = content[lang].title;
-      document.getElementById('desc').innerText = content[lang].desc;
+  <section class="grid-2">
+    <div>
+      <div class="mini-label" data-i18n="gov_label"></div>
+      <p data-i18n="gov_p1"></p>
+      <p data-i18n="gov_p2"></p>
+    </div>
+    <div class="contact-box">
+      <div class="mini-label" data-i18n="contact_label"></div>
+      <p><span data-i18n="contact_text"></span><br />
+      <strong>Email:</strong> <a href="mailto:info@uzlogix.uz">info@uzlogix.uz</a><br />
+      <strong>Phone:</strong> +998 (91) 994-01-00</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span data-i18n="footer"></span>
+</footer>
+
+<script>
+  const translations = {
+    uz: {
+      badge: "Milliy raqamli logistika platformasi tashabbusi",
+      hero_title_1: "Yagona",
+      hero_title_2: "logistika ekotizimi",
+      hero_text: "UzLogix – butun O‘zbekiston bo‘ylab yuk tashish, ombor va bojxona xizmatlarini yagona raqamli platformada birlashtiradigan tizim.",
+      hero_sub: "Loyiha davlat hamkorligi, soliq tushumlarini oshirish va logistika xarajatlarini kamaytirishga qaratilgan.",
+      stat1: "faol yuk tashuvchilar va ekspeditorlar uchun yagona reyestr",
+      stat2: "logistika xarajatlarini qisqartirish potentsiali (eksport-import uchun)",
+      stat3: "soliq tushumlari va ish o‘rinlari o‘sishi bo‘yicha to‘liq effekt muddati",
+      card_pill: "Nega bu loyiha muhim?",
+      card_title: "Soya bozorini qisqartirish va tashuvlarni shaffof qilish",
+      card_text: "Bugun ko‘plab shartnomalar naqd yoki norasmiy shaklda amalga oshadi. Platforma barcha operatsiyalarni shaffof qiladi, bu esa soliq tushumlari va xavfsizlikni oshiradi.",
+      card_tags: "• Real vaqt monitoringi • Ruxsatnomalar va litsenziyalar integratsiyasi • To‘lovlar va hisob-kitoblar onlayn",
+      sec1_title: "Asosiy yechimlar",
+      sec1_p1: "Platforma yuk beruvchi, tashuvchi, ombor va brokerlarni yagona tizimga birlashtiradi.",
+      sec1_p2: "Davlat idoralari uchun esa – real statistik ma’lumotlar, soliq potentsiali va xavf tahlili.",
+      sec1_li1: "Onlayn birja – yuk va transportni avtomatik moslashtirish",
+      sec1_li2: "Raqamli shartnomalar va elektron hujjatlar",
+      sec1_li3: "Soliq va bojxona tizimlari bilan integratsiya",
+      sec2_title: "Biznes uchun afzalliklar",
+      sec2_p1: "Tadbirkorlar uchun logistika jarayoni soddalashadi va xavflar kamayadi.",
+      sec2_li1: "Transportni tez va xavfsiz topish",
+      sec2_li2: "Yuklar harakati bo‘yicha onlayn kuzatuv",
+      sec2_li3: "Moliyaviy institutlar bilan integratsiya (lizing, kredit, sug‘urta)",
+      sec3_title: "Davlat uchun natijalar",
+      sec3_p1: "Loyiha bevosita va bilvosita soliq tushumlarini oshiradi va ‘yashirin’ bozorni qisqartiradi.",
+      sec3_li1: "Transport xizmatlaridan tushadigan QQS va daromad solig‘i oshishi",
+      sec3_li2: "Chegara va bojxona nuqtalarida yuk oqimini samarali boshqarish",
+      sec3_li3: "Soha bo‘yicha ishonchli statistika va prognoz qilish imkoniyati",
+      gov_label: "Hamkorlik formatlari",
+      gov_p1: "Loyiha davlat-xususiy sheriklik (DXSh) asosida, bosqichma-bosqich joriy etilishi mumkin.",
+      gov_p2: "Biz Texnik-iqtisodiy asos (TIA), biznes-reja va pilot hududlar bo‘yicha aniq takliflarni taqdim etishga tayyormiz.",
+      contact_label: "Aloqa va taqdimot",
+      contact_text: "To‘liq prezentatsiya, moliyaviy model va texnik konsepsiyani taqdim etish uchun biz bilan bog‘laning.",
+      footer: "UzLogix – O‘zbekiston logistikasini raqamlashtirish bo‘yicha tashabbus loyihasi."
+    },
+    ru: {
+      badge: "Инициатива национальной цифровой логистической платформы",
+      hero_title_1: "Единая",
+      hero_title_2: "логистическая экосистема",
+      hero_text: "UzLogix — платформа, объединяющая грузоотправителей, перевозчиков, склады и таможенные сервисы по всей Узбекистану.",
+      hero_sub: "Проект направлен на рост налоговых поступлений, снижение издержек и сокращение теневого рынка перевозок.",
+      stat1: "единый реестр активных перевозчиков и экспедиторов",
+      stat2: "потенциал снижения логистических издержек для экспорта и импорта",
+      stat3: "горизонт полного эффекта по налогам и занятости",
+      card_pill: "Почему это важно?",
+      card_title: "Прозрачные перевозки вместо теневого рынка",
+      card_text: "Сегодня значительная часть сделок проводится наличными и вне официальной отчетности. Платформа делает операции прозрачными и прослеживаемыми.",
+      card_tags: "• Онлайн-мониторинг • Интеграция с разрешениями и лицензиями • Безналичные расчёты",
+      sec1_title: "Ключевые решения",
+      sec1_p1: "Платформа объединяет все звенья цепочки поставок в одну цифровую среду.",
+      sec1_p2: "Для госорганов – это инструмент аналитики, управления рисками и контроля налоговой базы.",
+      sec1_li1: "Онлайн-биржа для подбора груза и транспорта",
+      sec1_li2: "Электронные контракты и документы",
+      sec1_li3: "Интеграция с налоговой и таможней",
+      sec2_title: "Преимущества для бизнеса",
+      sec2_p1: "Компании получают быстрый доступ к проверенным партнёрам и прозрачным тарифам.",
+      sec2_li1: "Сокращение пустых пробегов и простоев",
+      sec2_li2: "Отслеживание груза в реальном времени",
+      sec2_li3: "Доступ к финансированию, лизингу и страхованию",
+      sec3_title: "Результаты для государства",
+      sec3_p1: "Рост официального оборота в сфере транспорта и логистики.",
+      sec3_li1: "Увеличение НДС и подоходного налога с услуг перевозки",
+      sec3_li2: "Повышение пропускной способности погранпереходов",
+      sec3_li3: "Точная статистика по грузопотокам и экспортно-импортным операциям",
+      gov_label: "Форматы сотрудничества",
+      gov_p1: "Проект может быть реализован в формате ГЧП с поэтапным запуском модулей.",
+      gov_p2: "Команда готова представить ТЭО, бизнес-план и дорожную карту пилотных регионов.",
+      contact_label: "Контакты",
+      contact_text: "Для презентации проекта и обсуждения партнёрства свяжитесь с нами:",
+      footer: "UzLogix — инициативный проект по цифровизации логистики Узбекистана."
+    },
+    en: {
+      badge: "National digital logistics platform initiative",
+      hero_title_1: "Unified",
+      hero_title_2: "logistics ecosystem",
+      hero_text: "UzLogix is a national platform connecting shippers, carriers, warehouses and customs services across Uzbekistan.",
+      hero_sub: "The project is designed to increase tax revenues, reduce logistics costs, and formalize the grey transport market.",
+      stat1: "registered carriers and freight forwarders in one system",
+      stat2: "potential reduction in logistics costs for export-import flows",
+      stat3: "time horizon for full effect on taxes and employment",
+      card_pill: "Why this project matters",
+      card_title: "From fragmented services to a transparent digital market",
+      card_text: "Today many transport deals are informal and paid in cash. The platform makes operations digital and traceable, supporting a healthier business environment.",
+      card_tags: "• Real-time tracking • Integration with permits & licenses • Cashless settlements",
+      sec1_title: "Core solutions",
+      sec1_p1: "The platform unites every part of the supply chain in one digital environment.",
+      sec1_p2: "For government institutions it becomes a powerful tool for analytics, risk management and tax base monitoring.",
+      sec1_li1: "Online marketplace for matching cargo with available trucks",
+      sec1_li2: "Digital contracts and electronic document flow",
+      sec1_li3: "Integration with tax and customs systems",
+      sec2_title: "Benefits for business",
+      sec2_p1: "Companies gain faster access to reliable partners and transparent pricing.",
+      sec2_li1: "Lower empty mileage and downtime",
+      sec2_li2: "End-to-end cargo tracking",
+      sec2_li3: "Integration with banks, leasing and insurance providers",
+      sec3_title: "Impact for the state",
+      sec3_p1: "The project increases official turnover in the transport and logistics sector.",
+      sec3_li1: "Higher VAT and income tax collection from logistics services",
+      sec3_li2: "Smarter management of border and customs checkpoints",
+      sec3_li3: "Accurate statistics on cargo flows and foreign trade",
+      gov_label: "Public–private partnership",
+      gov_p1: "The platform can be launched in stages under a PPP model with clear KPIs.",
+      gov_p2: "We are ready to present a detailed business plan, financial model and pilot roadmap.",
+      contact_label: "Contact & presentation",
+      contact_text: "To request the full pitch deck and financial model, please contact:",
+      footer: "UzLogix – an initiative to digitalize logistics in Uzbekistan."
     }
-  </script>
+  };
+
+  const current = { lang: "uz" };
+
+  function applyTranslations(lang) {
+    const dict = translations[lang];
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key]) el.textContent = dict[key];
+    });
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang");
+      current.lang = lang;
+      document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      applyTranslations(lang);
+    });
+  });
+
+  // initial
+  applyTranslations(current.lang);
+</script>
 </body>
 </html>

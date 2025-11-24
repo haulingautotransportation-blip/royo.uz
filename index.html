@@ -176,6 +176,11 @@
       box-shadow: 0 0 0 1px rgba(37,99,235,0.1);
     }
 
+    input[readonly] {
+      background: #f9fafb;
+      cursor: pointer;
+    }
+
     textarea {
       resize: vertical;
       min-height: 60px;
@@ -385,7 +390,7 @@
             Yuklanish sanasi: 24/11/2025
           </div>
           <div class="load-meta">
-            Yuk turi: kraska (havfli yuk) 
+            Yuk turi: kraska (havfli yuk)
           </div>
           <div class="load-price">
             $6 900
@@ -439,12 +444,21 @@
             <span class="tag">Tent</span>
           </div>
         </article>
-
       </section>
 
       <!-- Yuk qo'shish sahifasi -->
       <section class="section" id="screen-add">
         <div class="form-step">Yuk qo‘shish – 2 / 3 bosqich (maket)</div>
+
+        <div class="form-group">
+          <label>Yuklanish joyi (FROM) *</label>
+          <input id="from-location" type="text" placeholder="Qayerdan" readonly />
+        </div>
+
+        <div class="form-group">
+          <label>Yetkazish joyi (TO) *</label>
+          <input id="to-location" type="text" placeholder="Qayerga" readonly />
+        </div>
 
         <div class="form-group">
           <label>Yuk turi *</label>
@@ -532,6 +546,14 @@
         <div class="country-item">
           <div class="country-left">
             <div class="flag"></div>
+            <div class="country-name">Belarus</div>
+          </div>
+          <div class="country-arrow">›</div>
+        </div>
+
+        <div class="country-item">
+          <div class="country-left">
+            <div class="flag"></div>
             <div class="country-name">Turkiya</div>
           </div>
           <div class="country-arrow">›</div>
@@ -556,15 +578,21 @@
 
       <!-- Qidiruv, Yuklarim, Profil – hozircha oddiy yozuv (maket uchun yetarli) -->
       <section class="section" id="screen-search">
-        <p style="font-size:13px;color:#6b7280;">Qidiruv sahifasi (keyin haqiqiy funksiyalar qo‘shiladi). Hozircha bu maket faqat loyihani tushuntirish uchun.</p>
+        <p style="font-size:13px;color:#6b7280;">
+          Qidiruv sahifasi (keyin haqiqiy funksiyalar qo‘shiladi). Hozircha bu maket faqat loyihani tushuntirish uchun.
+        </p>
       </section>
 
       <section class="section" id="screen-my">
-        <p style="font-size:13px;color:#6b7280;">“Yuklarim” sahifasi. Bu yerda foydalanuvchining barcha yuk buyurtmalari ko‘rinadi (maket).</p>
+        <p style="font-size:13px;color:#6b7280;">
+          “Yuklarim” sahifasi. Bu yerda foydalanuvchining barcha yuk buyurtmalari ko‘rinadi (maket).
+        </p>
       </section>
 
       <section class="section" id="screen-profile">
-        <p style="font-size:13px;color:#6b7280;">Profil sahifasi: kompaniya ma’lumotlari, reyting, tasdiqlangan hujjatlar va h.k. (maket).</p>
+        <p style="font-size:13px;color:#6b7280;">
+          Profil sahifasi: kompaniya ma’lumotlari, reyting, tasdiqlangan hujjatlar va h.k. (maket).
+        </p>
       </section>
     </main>
   </div>
@@ -608,6 +636,11 @@
       location: document.getElementById("screen-location")
     };
 
+    const fromInput = document.getElementById("from-location");
+    const toInput = document.getElementById("to-location");
+
+    let currentLocationField = null; // 'from' | 'to' | null
+
     function showSection(name) {
       Object.values(sections).forEach(sec => sec.classList.remove("active"));
       if (sections[name]) sections[name].classList.add("active");
@@ -619,9 +652,14 @@
           headerTitle.textContent = "Asosiy";
           headerAction.textContent = "Joylashuv";
           headerAction.onclick = () => {
+            currentLocationField = null; // umumiy joylashuv
             showSection("location");
             headerTitle.textContent = "Joylashuvni tanlang";
             headerAction.textContent = "Orqaga";
+            headerAction.onclick = () => {
+              showSection("home");
+              setHeaderFor("home");
+            };
           };
           break;
         case "search":
@@ -644,9 +682,22 @@
           headerAction.textContent = "";
           headerAction.onclick = null;
           break;
+        case "location":
+          headerTitle.textContent = "Joylashuvni tanlang";
+          headerAction.textContent = "Orqaga";
+          headerAction.onclick = () => {
+            // tanlashdan voz kechib qaytish
+            showSection("add");
+            setHeaderFor("add");
+          };
+          break;
       }
     }
 
+    // Boshlang'ich holat – Asosiy
+    setHeaderFor("home");
+
+    // Pastki menyu eventlari
     document.querySelectorAll(".nav-item").forEach(item => {
       item.addEventListener("click", () => {
         const target = item.getAttribute("data-target");
@@ -657,24 +708,36 @@
       });
     });
 
-    // Joylashuv sahifasidan orqaga qaytish
-    headerAction.onclick = () => {
+    // FROM / TO maydonlariga bosilganda joylashuv oynasini ochish
+    fromInput.addEventListener("click", () => {
+      currentLocationField = "from";
       showSection("location");
-      headerTitle.textContent = "Joylashuvni tanlang";
-      headerAction.textContent = "Orqaga";
-    };
+      setHeaderFor("location");
+    });
 
-    // Joylashuv sahifasida istalgan davlatni bosganda Asosiyga qaytish
+    toInput.addEventListener("click", () => {
+      currentLocationField = "to";
+      showSection("location");
+      setHeaderFor("location");
+    });
+
+    // Davlat tanlanganda FROM / TO ga yozish
     document.querySelectorAll(".country-item").forEach(el => {
       el.addEventListener("click", () => {
-        showSection("home");
-        headerTitle.textContent = "Asosiy";
-        headerAction.textContent = "Joylashuv";
-        headerAction.onclick = () => {
-          showSection("location");
-          headerTitle.textContent = "Joylashuvni tanlang";
-          headerAction.textContent = "Orqaga";
-        };
+        const countryName = el.querySelector(".country-name").textContent.trim();
+
+        if (currentLocationField === "from") {
+          fromInput.value = countryName;
+        } else if (currentLocationField === "to") {
+          toInput.value = countryName;
+        } else {
+          // umumiy holat – Asosiy uchun joylashuv tanlandi, hozircha ishlatmaymiz
+        }
+
+        // Tanlagandan keyin yuk qo'shish sahifasiga qaytamiz
+        showSection("add");
+        setHeaderFor("add");
+        currentLocationField = null;
       });
     });
   </script>

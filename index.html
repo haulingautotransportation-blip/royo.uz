@@ -281,13 +281,6 @@
       gap: 10px;
     }
 
-    .flag {
-      width: 26px;
-      height: 18px;
-      border-radius: 4px;
-      background: #e5e7eb;
-    }
-
     .country-name {
       font-weight: 500;
       color: #111827;
@@ -383,21 +376,21 @@
 
         <article class="load-card">
           <div class="load-row-top">
-            <div>ISTANBUL, TR → ALMATI, KZ</div>
+            <div>Toshkent shahri → Samarqand viloyati</div>
             <div>bugun</div>
           </div>
           <div class="load-route">
             Yuklanish sanasi: 24/11/2025
           </div>
           <div class="load-meta">
-            Yuk turi: kraska (havfli yuk)
+            Yuk turi: maishiy texnika
           </div>
           <div class="load-price">
-            $6 900
+            12 500 000 so‘m
           </div>
           <div class="load-tags">
-            <span class="tag">22.00 t</span>
-            <span class="tag gray">m³</span>
+            <span class="tag">10 t</span>
+            <span class="tag gray">45 m³</span>
             <span class="tag">Tent</span>
             <span class="tag gray">Naqd / Bank o‘tkazma</span>
           </div>
@@ -405,41 +398,41 @@
 
         <article class="load-card">
           <div class="load-row-top">
-            <div>ESKISEHIR, TR → DUSHANBE, TJ</div>
+            <div>Farg‘ona viloyati → Buxoro viloyati</div>
             <div>bugun</div>
           </div>
           <div class="load-route">
             Yuklanish sanasi: 25/11/2025
           </div>
           <div class="load-meta">
-            Yuk turi: marmar va burchaklar
+            Yuk turi: qadoqlangan oziq-ovqat
           </div>
           <div class="load-price">
             Narx kelishiladi
           </div>
           <div class="load-tags">
-            <span class="tag">22.00 t</span>
-            <span class="tag">Tent</span>
+            <span class="tag">15 t</span>
+            <span class="tag">Ref</span>
             <span class="tag gray">Aralash to‘lov</span>
           </div>
         </article>
 
         <article class="load-card">
           <div class="load-row-top">
-            <div>QORAQALPOG‘ISTON, UZ → RIGA, LV</div>
+            <div>Qoraqalpog‘iston Respublikasi → Toshkent viloyati</div>
             <div>bugun</div>
           </div>
           <div class="load-route">
             Yuklanish sanasi: 24/11/2025
           </div>
           <div class="load-meta">
-            Yuk turi: granulalar
+            Yuk turi: quruq yuk (granula)
           </div>
           <div class="load-price">
             Narx kelishiladi
           </div>
           <div class="load-tags">
-            <span class="tag">22 500 kg</span>
+            <span class="tag">22 t</span>
             <span class="tag gray">86 m³</span>
             <span class="tag">Tent</span>
           </div>
@@ -452,12 +445,12 @@
 
         <div class="form-group">
           <label>Yuklanish joyi (FROM) *</label>
-          <input id="from-location" type="text" placeholder="Qayerdan" readonly />
+          <input id="from-location" type="text" placeholder="Qaysi viloyatdan" readonly />
         </div>
 
         <div class="form-group">
           <label>Yetkazish joyi (TO) *</label>
-          <input id="to-location" type="text" placeholder="Qayerga" readonly />
+          <input id="to-location" type="text" placeholder="Qaysi viloyatga" readonly />
         </div>
 
         <div class="form-group">
@@ -511,66 +504,108 @@
         </div>
       </section>
 
-      <!-- Joylashuv tanlash sahifasi -->
+      <!-- Joylashuv tanlash sahifasi (faqat O‘zbekiston hududlari) -->
       <section class="section" id="screen-location">
-        <div class="form-step">Joylashuvni tanlash (maket)</div>
+        <div class="form-step">Joylashuvni tanlang (O‘zbekiston hududlari)</div>
 
         <div class="search-box">
-          <input type="text" placeholder="Muayyan joylashuvni qidiring" />
+          <input type="text" placeholder="Viloyat yoki hududni qidiring (maket)" />
         </div>
 
         <div class="country-item">
           <div class="country-left">
-            <div class="flag"></div>
-            <div class="country-name">O‘zbekiston</div>
+            <div class="country-name">Toshkent shahri</div>
           </div>
           <div class="country-arrow">›</div>
         </div>
 
         <div class="country-item">
           <div class="country-left">
-            <div class="flag"></div>
-            <div class="country-name">Rossiya</div>
+            <div class="country-name">Toshkent viloyati</div>
           </div>
           <div class="country-arrow">›</div>
         </div>
 
         <div class="country-item">
           <div class="country-left">
-            <div class="flag"></div>
-            <div class="country-name">Qozog‘iston</div>
+            <div class="country-name">Samarqand viloyati</div>
           </div>
           <div class="country-arrow">›</div>
         </div>
 
         <div class="country-item">
           <div class="country-left">
-            <div class="flag"></div>
-            <div class="country-name">Belarus</div>
+            <div class="country-name">Buxoro viloyati</div>
           </div>
           <div class="country-arrow">›</div>
         </div>
 
         <div class="country-item">
           <div class="country-left">
-            <div class="flag"></div>
-            <div class="country-name">Turkiya</div>
+            <div class="country-name">Xorazm viloyati</div>
           </div>
           <div class="country-arrow">›</div>
         </div>
 
         <div class="country-item">
           <div class="country-left">
-            <div class="flag"></div>
-            <div class="country-name">Qirg‘iziston</div>
+            <div class="country-name">Namangan viloyati</div>
           </div>
           <div class="country-arrow">›</div>
         </div>
 
         <div class="country-item">
           <div class="country-left">
-            <div class="flag"></div>
-            <div class="country-name">Tojikiston</div>
+            <div class="country-name">Farg‘ona viloyati</div>
+          </div>
+          <div class="country-arrow">›</div>
+        </div>
+
+        <div class="country-item">
+          <div class="country-left">
+            <div class="country-name">Andijon viloyati</div>
+          </div>
+          <div class="country-arrow">›</div>
+        </div>
+
+        <div class="country-item">
+          <div class="country-left">
+            <div class="country-name">Jizzax viloyati</div>
+          </div>
+          <div class="country-arrow">›</div>
+        </div>
+
+        <div class="country-item">
+          <div class="country-left">
+            <div class="country-name">Sirdaryo viloyati</div>
+          </div>
+          <div class="country-arrow">›</div>
+        </div>
+
+        <div class="country-item">
+          <div class="country-left">
+            <div class="country-name">Qashqadaryo viloyati</div>
+          </div>
+          <div class="country-arrow">›</div>
+        </div>
+
+        <div class="country-item">
+          <div class="country-left">
+            <div class="country-name">Surxondaryo viloyati</div>
+          </div>
+          <div class="country-arrow">›</div>
+        </div>
+
+        <div class="country-item">
+          <div class="country-left">
+            <div class="country-name">Navoiy viloyati</div>
+          </div>
+          <div class="country-arrow">›</div>
+        </div>
+
+        <div class="country-item">
+          <div class="country-left">
+            <div class="country-name">Qoraqalpog‘iston Respublikasi</div>
           </div>
           <div class="country-arrow">›</div>
         </div>
@@ -686,7 +721,6 @@
           headerTitle.textContent = "Joylashuvni tanlang";
           headerAction.textContent = "Orqaga";
           headerAction.onclick = () => {
-            // tanlashdan voz kechib qaytish
             showSection("add");
             setHeaderFor("add");
           };
@@ -721,20 +755,17 @@
       setHeaderFor("location");
     });
 
-    // Davlat tanlanganda FROM / TO ga yozish
+    // Hudud tanlanganda FROM / TO ga yozish
     document.querySelectorAll(".country-item").forEach(el => {
       el.addEventListener("click", () => {
-        const countryName = el.querySelector(".country-name").textContent.trim();
+        const name = el.querySelector(".country-name").textContent.trim();
 
         if (currentLocationField === "from") {
-          fromInput.value = countryName;
+          fromInput.value = name;
         } else if (currentLocationField === "to") {
-          toInput.value = countryName;
-        } else {
-          // umumiy holat – Asosiy uchun joylashuv tanlandi, hozircha ishlatmaymiz
+          toInput.value = name;
         }
 
-        // Tanlagandan keyin yuk qo'shish sahifasiga qaytamiz
         showSection("add");
         setHeaderFor("add");
         currentLocationField = null;

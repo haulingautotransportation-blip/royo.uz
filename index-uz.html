@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <title>RoYo Logistics – Aqlli Yuk Tashish Platformasi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="top-bar">
+    <div class="logo">
+      <img src="logo.png" alt="RoYo Logistics Logotipi" class="logo-img">
+    </div>
 
+    <nav class="nav">
+      <a href="#how-it-works">Qanday ishlaydi</a>
+      <a href="#features">Xususiyatlar</a>
+      <a href="#dashboard">Veb-ilova</a>
+      <a href="#contact">Kontaktlar</a>
+    </nav>
+
+    <div class="lang-switcher">
+      <a href="index.html" class="lang-switch">EN</a>
+      <a href="index-ru.html" class="lang-switch">RU</a>
+      <a href="index-uz.html" class="lang-switch active">UZ</a>
+    </div>
+  </header>
+
+    <section class="hero">
+    <div class="hero-text">
+      <h1>Markaziy Osiyo va Rossiya uchun Aqlli Logistika</h1>
+      <p>
+        Yuklarni yuk mashinalariga moslang, har bir yukni real vaqtda kuzatib boring va sun'iy intellektdan bo'sh yurishlarni hamda yoqilg'i xarajatlarini kamaytirish uchun foydalaning.
+      </p>
+      <div class="hero-actions">
+        <button class="btn primary" onclick="scrollToSection('dashboard')">
+          Veb-Demonstratsiyani ochish
+        </button>
+        <button class="btn secondary" onclick="scrollToSection('contact')">
+          Biz bilan bog'lanish
+        </button>
+      </div>
+      <p class="hero-note">
+        Avval veb. Keyin mobil (iOS va Android) – barchasi yagona RoYo backend tomonidan quvvatlanadi.
+      </p>
+    </div>
+    <div class="hero-card">
+      <h2>Jonli Koridor Xulosasi</h2>
+      <ul id="corridor-list">
+              </ul>
+      <div class="hero-card-footer">
+        RoYo AI yo'nalish dvigateli tomonidan quvvatlanadi (demo ma'lumotlar).
+      </div>
+    </div>
+  </section>
+
+    <section id="how-it-works" class="section">
+    <h2>RoYo qanday ishlaydi</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>1. Yuk jo'natuvchi yukni joylaydi</h3>
+        <p>
+          Jo'nash, manzil, yuk turi, og'irligi, afzal ko'rilgan vaqt – barchasi veb-ilova orqali 30 soniyadan kamroq vaqt ichida kiritiladi.
+        </p>
+      </div>
+      <div class="card">
+        <h3>2. Haydovchilar takliflarni oladi</h3>
+        <p>
+          Tasdiqlangan haydovchilar mavjud yuklarni, taklif etilayotgan tariflarni va optimal yo'nalishlarni o'nta turli chat o'rniga bir joyda ko'rishadi.
+        </p>
+      </div>
+      <div class="card">
+        <h3>3. AI safarni optimallashtiradi</h3>
+        <p>
+          RoYo narx, yo'nalish va orqa yuklarni tavsiya qiladi, bo'sh yurishni kamaytirish va har bir kilometrdan tushadigan daromadni oshirish uchun.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <section id="features" class="section alt">
+    <h2>Asosiy Xususiyatlar</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Yuk bozori</h3>
+        <p>
+          Yuk jo'natuvchilar, haydovchilar va avtopark egalari uchrishadigan yagona interfeys. Yo'nalish, yuk turi, transport vositasi va narx bo'yicha filtrlash.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Real Vaqtda Kuzatish</h3>
+        <p>
+          Har bir yuk mashinasini xaritada ko'ring, har bir yukning jonli holatini, taxminiy kelish vaqtlarini va istisno ogohlantirishlarini kuzatib boring.
+        </p>
+      </div>
+      <div class="card">
+        <h3>AI Yo'nalish va Narxlash</h3>
+        <p>
+          RoYo yoqilg'i, talab, chegara kechikishlari va tarixiy ko'rsatkichlarga asoslanib eng yaxshi narx va yo'nalishni taklif qiladi.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Avtopark va Haydovchi Paneli</h3>
+        <p>
+          Bir nechta yuk mashinalarini boshqaring, sayohatlarni tayinlang, foydalanishni kuzatib boring va oddiy boshqaruv paneli yordamida ishlashni nazorat qiling.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Raqamli Hujjatlar</h3>
+        <p>
+          CMR, hisob-fakturalar, shartnomalar va yetkazib berish tasdiqnomalarini bir joyda saqlang. Yo'qolgan qog'ozlar yoki WhatsAppdagi tartibsizliklarga chek qo'ying.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Mobil Platformalar uchun Tayyor</h3>
+        <p>
+          Veb MVP barqarorlashgandan so'ng, xuddi shu backend haydovchilar va yuk jo'natuvchilar uchun mahalliy iOS va Android ilovalarini quvvatlaydi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <section id="dashboard" class="section">
+    <h2>Veb-Ilova Demonstratsiyasi – Yuk va Yuk Mashinasi Taxtasi</h2>
+    <div class="dashboard">
+      <div class="board">
+        <h3>Mavjud Yuklar</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Qayerdan</th>
+              <th>Qayerga</th>
+              <th>Yuk</th>
+              <th>Narx (USD)</th>
+              <th>Harakat</th>
+            </tr>
+          </thead>
+          <tbody id="load-table-body">
+                      </tbody>
+        </table>
+      </div>
+      <div class="board">
+        <h3>Mavjud Yuk Mashinalari</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Haydovchi</th>
+              <th>Yuk mashinasi</th>
+              <th>Manzil</th>
+              <th>Sig'im (t)</th>
+              <th>Holat</th>
+            </tr>
+          </thead>
+          <tbody id="truck-table-body">
+                      </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="hint">
+      Bu faqat old tomon demo. Keyinchalik biz ushbu interfeysni haqiqiy backend APIga va keyin mahalliy mobil ilovalarga bog'laymiz.
+    </p>
+  </section>
+
+    <section id="about" class="about-section">
+    <h2>RoYo haqida</h2>
+    <p>
+      RoYo Markaziy Osiyo va Rossiya uchun birinchi AI-quvvatli logistika tarmog'ini yaratmoqda.
+      Bizning maqsadimiz – bo'sh yurishni kamaytirish, haydovchi daromadini oshirish va butun mintaqa uchun
+      yagona raqamli yuk infratuzilmasini yaratish.
+    </p>
+    <p>
+      Biz mintaqaviy savdoni modernizatsiya qilish va har bir kilometrni yanada samaraliroq qilish uchun
+      AI yo'nalishini, real vaqtda kuzatishni va shaffof yuk moslashuvini birlashtiramiz.
+    </p>
+  </section>
+
+    <section id="investors" class="investors-section">
+    <h2>Investorlar va Hukumat Hamkorlari uchun</h2>
+    <p>
+      RoYo hozirda Pre-Seed / Seed raundini jalb qilmoqda va Markaziy Osiyo va Rossiya bo'ylab
+      miqyosni kengaytirish uchun xalqaro transport va innovatsion grant arizalarini tayyorlamoqda.
+    </p>
+    <p>
+      Biz yuk koridorlarini raqamlashtirishga qiziqqan institutsional hamkorlarni, logistika operatorlarini,
+      innovatsion fondlarni, davlat idoralarini va rivojlanish tashkilotlarini qutlaymiz.
+    </p>
+  </section>
+
+    <section id="contact" class="section alt contact-section">
+    <h2>RoYo Kontaktlari</h2>
+
+    <div class="contact-grid">
+      <div>
+        <p><strong>Email:</strong> <a href="mailto:Murodkazakov13@gmail.com">Murodkazakov13@gmail.com</a></p>
+        <p><strong>Telegram:</strong> <a href="https://t.me/Murodkazakov13" target="_blank">t.me/Murodkazakov13</a></p>
+        <p><strong>Telefon:</strong> <a href="tel:+998909423313">+998 90 942 33 13</a></p>
+        <p><strong>Qo'ng'iroqqa yozilish:</strong> (Calendly – tez orada)</p>
+      </div>
+
+      <div>
+        <p>
+          Agar siz investor, logistika hamkori yoki dastlabki mijoz bo'lsangiz, emailingizni qoldiring va biz shaxsiy demo kirishini baham ko'ramiz.
+        </p>
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+          <input type="text" id="name" placeholder="Ismingiz" required />
+          <input type="email" id="email" placeholder="Emailingiz" required />
+          <textarea id="message" placeholder="Kimligingizni va RoYo bilan qanday ishlashni xohlayotganingizni ayting"></textarea>
+          <button type="submit" class="btn primary">Yuborish</button>
+        </form>
+        <p id="contact-status" class="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="year"></span> RoYo Logistics – Markaziy Osiyo va Rossiya uchun Aqlli Yuk Tashish
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

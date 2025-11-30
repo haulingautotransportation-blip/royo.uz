@@ -64,6 +64,29 @@ body {
   padding: 0.8rem 2.5rem;
   border-bottom: 1px solid #e2e8f0;
 }
+.lang-switcher {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: 1.5rem;
+}
+
+.lang-switch {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #475569;
+  opacity: 0.8;
+}
+
+.lang-switch:hover {
+  opacity: 1;
+  color: #0f172a;
+}
+
+.lang-switch.active {
+  opacity: 1;
+  color: #0f172a;
+}
 
 .logo {
   font-weight: 800;

@@ -7,68 +7,31 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- TOP BAR -->
   <header class="top-bar">
-    <!-- ABOUT SECTION -->
-<section id="about" class="about-section">
-    <h2>About RoYo</h2>
-    <p>
-        RoYo is building the first AI-powered logistics network for Central Asia & Russia.
-        Our mission is to reduce empty miles, increase driver earnings, and create a unified
-        digital freight infrastructure for the entire region.
-    </p>
-</section>
-
-<!-- INVESTOR / GOVERNMENT SECTION -->
-<section id="investors" class="investor-section">
-    <h2>For Investors & Government Partners</h2>
-    <p>
-        RoYo is currently raising a Pre-Seed / Seed round and applying for international
-        transportation & innovation grants to scale across Central Asia and Russia.
-        We welcome conversations with public and private partners.
-    </p>
-</section>
-
-<!-- CONTACT SECTION -->
-<section id="contact" class="contact-section">
-    <h2>Contact RoYo</h2>
-    <p>Email: <a href="mailto:Murodkazakov13@gmail.com">Murodkazakov13@gmail.com</a></p>
-    <p>Telegram: <a href="https://t.me/Murodkazakov13" target="_blank">t.me/Murodkazakov13</a></p>
-    <p>Phone: <a href="tel:+998909423313">+998 90 942 33 13</a></p>
-
-    <p style="margin-top:10px;">
-        <a href="#" class="call-button">Book a Call (Coming Soon)</a>
-    </p>
-</section>
-
     <div class="logo">RoYo<span>Logistics</span></div>
+
     <nav class="nav">
       <a href="#how-it-works">How it works</a>
       <a href="#features">Features</a>
       <a href="#dashboard">Web app</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <li><a href="#" class="lang-switch">EN</a></li>
-<li><a href="#" class="lang-switch">RU</a></li>
-<li><a href="#" class="lang-switch">UZ</a></li>
 
-<style>
-.lang-switch {
-    margin-left: 10px;
-    font-weight: 600;
-    opacity: 0.8;
-}
-.lang-switch:hover {
-    opacity: 1;
-}
-</style>
-
+    <div class="lang-switcher">
+      <a href="#" class="lang-switch active">EN</a>
+      <a href="#" class="lang-switch">RU</a>
+      <a href="#" class="lang-switch">UZ</a>
+    </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
-      <h1>Smart Logistics for Central Asia & Russia</h1>
+      <h1>Smart Logistics for Central Asia &amp; Russia</h1>
       <p>
-        Match loads with trucks, track every shipment in real-time, and use AI to reduce empty miles and fuel costs.
+        Match loads with trucks, track every shipment in real time, and use AI to reduce empty miles and fuel costs.
       </p>
       <div class="hero-actions">
         <button class="btn primary" onclick="scrollToSection('dashboard')">
@@ -79,9 +42,10 @@
         </button>
       </div>
       <p class="hero-note">
-        Web first. Mobile (iOS & Android) next – all powered by one unified RoYo backend.
+        Web first. Mobile (iOS &amp; Android) next – all powered by one unified RoYo backend.
       </p>
     </div>
+
     <div class="hero-card">
       <h2>Live Corridor Snapshot</h2>
       <ul id="corridor-list">
@@ -93,6 +57,7 @@
     </div>
   </section>
 
+  <!-- HOW IT WORKS -->
   <section id="how-it-works" class="section">
     <h2>How RoYo Works</h2>
     <div class="grid-3">
@@ -117,6 +82,7 @@
     </div>
   </section>
 
+  <!-- FEATURES -->
   <section id="features" class="section alt">
     <h2>Key Features</h2>
     <div class="grid-3">
@@ -133,13 +99,13 @@
         </p>
       </div>
       <div class="card">
-        <h3>AI Routing & Pricing</h3>
+        <h3>AI Routing &amp; Pricing</h3>
         <p>
           RoYo suggests the best price and route based on fuel, demand, border delays, and historical performance.
         </p>
       </div>
       <div class="card">
-        <h3>Fleet & Driver Panel</h3>
+        <h3>Fleet &amp; Driver Panel</h3>
         <p>
           Manage multiple trucks, assign trips, monitor utilization, and track performance from a simple dashboard.
         </p>
@@ -153,14 +119,15 @@
       <div class="card">
         <h3>Ready for Mobile</h3>
         <p>
-          The same backend will power native iOS & Android apps for drivers and shippers once the web MVP is stable.
+          The same backend will power native iOS &amp; Android apps for drivers and shippers once the web MVP is stable.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- WEB APP DEMO -->
   <section id="dashboard" class="section">
-    <h2>Web App Demo – Load & Truck Board</h2>
+    <h2>Web App Demo – Load &amp; Truck Board</h2>
     <div class="dashboard">
       <div class="board">
         <h3>Available Loads</h3>
@@ -202,62 +169,76 @@
     </p>
   </section>
 
-  <section id="contact" class="section alt">
-    <h2>Contact & Next Steps</h2>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About RoYo</h2>
+    <p>
+      RoYo is a next-generation logistics platform built to digitize and optimize freight movement
+      across Central Asia and Russia. We combine AI routing, real-time tracking, and transparent
+      load matching to reduce empty miles, lower logistics costs, and modernize regional trade.
+    </p>
+    <p>
+      Our mission is simple: create a unified, intelligent logistics infrastructure for the entire region —
+      where every shipment, route, and driver operates efficiently and transparently.
+    </p>
+  </section>
+
+  <!-- INVESTORS / GOVERNMENTS -->
+  <section id="investors" class="section alt investors-section">
+    <h2>For Investors &amp; Government Partners</h2>
+    <p>
+      RoYo is currently raising a Pre-Seed / Seed round and preparing grant applications with
+      international organizations to scale AI-powered logistics infrastructure across Central Asia and Russia.
+    </p>
+    <p>
+      We welcome institutional partners, logistics operators, innovation funds, government agencies,
+      and development organizations interested in digitalizing freight corridors.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact RoYo</h2>
     <p>
       If you are an investor, logistics partner, or early customer, leave your email and we’ll share private demo access.
     </p>
+
     <form class="contact-form" onsubmit="handleContactSubmit(event)">
       <input type="text" id="name" placeholder="Your name" required />
       <input type="email" id="email" placeholder="Your email" required />
       <textarea id="message" placeholder="Tell us who you are and how you’d like to work with RoYo"></textarea>
       <button type="submit" class="btn primary">Submit</button>
     </form>
+
     <p id="contact-status" class="status"></p>
-  </section>
-  <section id="about" style="padding:70px 20px; background:white;">
-    <h2 style="text-align:center; font-size:32px;">About RoYo</h2>
-    <section id="investors" style="padding:50px 20px; background:#eef2f7; margin-top:40px;">
-    <h2 style="text-align:center; font-size:28px; margin-bottom:10px;">For Investors & Government Partners</h2>
-    <p style="max-width:850px; margin:10px auto; text-align:center; font-size:18px;">
-        RoYo is currently raising a Pre-Seed/Seed round and preparing grant applications with 
-        international organizations to scale AI-powered logistics infrastructure across Central Asia and Russia.
-    </p>
-    <p style="text-align:center; font-size:18px;">
-        We welcome institutional partners, logistics operators, innovation funds, government agencies, 
-        and development organizations interested in digitalizing freight corridors.
-    </p>
-</section>
 
-    <p style="max-width:800px; margin:20px auto; text-align:center; font-size:18px;">
-        RoYo is a next-generation logistics platform built to digitize and optimize freight movement 
-        across Central Asia and Russia. We combine AI routing, real-time tracking, and transparent 
-        load matching to reduce empty miles, lower logistics costs, and modernize regional trade.
-    </p>
-
-    <p style="max-width:800px; margin:10px auto; text-align:center; font-size:18px;">
-        Our mission is simple: create a unified, intelligent logistics infrastructure for the entire region —
-        where every shipment, route, and driver operates efficiently and transparently.
-    </p>
-</section>
-
-
-  <footer class="footer">
-    © <span id="year"></span> RoYo Logistics – Smart Freight for Central Asia & Russia
-  </footer>
-  <section id="contact" style="padding:60px 20px; background:#f8f9fb; margin-top:60px;">
-    <h2 style="text-align:center; font-size:32px; margin-bottom:20px;">Contact RoYo</h2>
-    <p style="text-align:center; font-size:18px; max-width:700px; margin:0 auto 40px;">
-        Reach out to the RoYo team for partnerships, pilot programs, or platform access.
-    </p>
-
-    <div style="max-width:600px; margin:0 auto; text-align:center; font-size:18px;">
-        <p><strong>Email:</strong> <a href="mailto:Murodkazakov13@gmail.com">Murodkazakov13@gmail.com</a></p>
-        <p><strong>Telegram:</strong> <a href="https://t.me/Murodkazakov13" target="_blank">t.me/Murodkazakov13</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+998909423313">+998 90 942 33 13</a></p>
-        <p><strong>Book a Call:</strong> <a href="#">(Calendly – coming soon)</a></p>
+    <div class="contact-section">
+      <h3>Direct Contacts</h3>
+      <div class="contact-grid">
+        <div>
+          <strong>Email</strong><br />
+          <a href="mailto:Murodkazakov13@gmail.com">Murodkazakov13@gmail.com</a>
+        </div>
+        <div>
+          <strong>Telegram</strong><br />
+          <a href="https://t.me/Murodkazakov13" target="_blank">t.me/Murodkazakov13</a>
+        </div>
+        <div>
+          <strong>Phone</strong><br />
+          <a href="tel:+998909423313">+998 90 942 33 13</a>
+        </div>
+        <div>
+          <strong>Book a Call</strong><br />
+          <span>(Calendly – coming soon)</span>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © <span id="year"></span> RoYo Logistics – Smart Freight for Central Asia &amp; Russia
+  </footer>
 
   <script src="app.js"></script>
 </body>

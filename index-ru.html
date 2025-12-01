@@ -1,221 +1,238 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>RoYo Logistics – Интеллектуальная Грузовая Платформа</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <title>RoYo Logistics – Интеллектуальная грузовая платформа</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header class="top-bar">
-    <div class="logo">
-      <img src="logo.png" alt="RoYo Logistics Logo" class="logo-img">
+  <header class="top-bar">
+    <div class="logo">
+      <img src="logo.png" alt="Логотип RoYo Logistics" class="logo-img" />
     </div>
 
-    <nav class="nav">
-      <a href="#how-it-works">Как это работает</a>
-      <a href="#features">Функции</a>
-      <a href="#dashboard">Веб-приложение</a>
-      <a href="#contact">Контакты</a>
-    </nav>
+    <nav class="nav">
+      <a href="#how-it-works">Как это работает</a>
+      <a href="#features">Функции</a>
+      <a href="#dashboard">Веб-приложение</a>
+      <a href="#contact">Контакты</a>
+    </nav>
 
-    <div class="lang-switcher">
-      <a href="index.html" class="lang-switch">EN</a>
-      <a href="index-ru.html" class="lang-switch active">RU</a>
-      <a href="index-uz.html" class="lang-switch">UZ</a>
-    </div>
-  </header>
+    <div class="lang-switcher">
+      <a href="index.html" class="lang-switch">EN</a>
+      <a href="index-ru.html" class="lang-switch active">RU</a>
+      <a href="index-uz.html" class="lang-switch">UZ</a>
+    </div>
+  </header>
 
-    <section class="hero">
-    <div class="hero-text">
-      <h1>Интеллектуальная Логистика для Центральной Азии и Развивающаяся Европа</h1>
-      <p>
-        Сопоставляйте грузы с транспортом, отслеживайте каждую партию в реальном времени и используйте ИИ для снижения порожнего пробега и расходов на топливо.
-      </p>
-      <div class="hero-actions">
-        <button class="btn primary" onclick="scrollToSection('dashboard')">
-          Открыть Веб-Демо
-        </button>
-        <button class="btn secondary" onclick="scrollToSection('contact')">
-          Связаться с нами
-        </button>
-      </div>
-      <p class="hero-note">
-        Сначала веб. Мобильные приложения (iOS и Android) позже – все на базе единого бэкэнда RoYo.
-      </p>
-    </div>
-    <div class="hero-card">
-      <h2>Сводка по Коридорам (Live)</h2>
-      <ul id="corridor-list">
-              </ul>
-      <div class="hero-card-footer">
-        Работает на базе ИИ-двигателя RoYo (демо-данные).
-      </div>
-    </div>
-  </section>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Интеллектуальная логистика для Центральной Азии и развивающейся Европы</h1>
+      <p>
+        Сопоставляйте грузы с транспортом, отслеживайте каждую партию в реальном времени
+        и используйте ИИ, чтобы снижать порожний пробег и расходы на топливо.
+      </p>
+      <div class="hero-actions">
+        <button class="btn primary" onclick="scrollToSection('dashboard')">
+          Открыть веб-демо
+        </button>
+        <button class="btn secondary" onclick="scrollToSection('contact')">
+          Связаться с нами
+        </button>
+      </div>
+      <p class="hero-note">
+        Сначала веб. Мобильные приложения (iOS и Android) позже — всё на базе единого
+        бэкэнда RoYo.
+      </p>
+    </div>
 
-    <section id="how-it-works" class="section">
-    <h2>Как работает RoYo</h2>
-    <div class="grid-3">
-      <div class="card">
-        <h3>1. Грузоотправитель размещает груз</h3>
-        <p>
-          Пункт отправления, назначения, тип груза, вес, предпочтительное время – все вводится менее чем за 30 секунд через веб-приложение.
-        </p>
-      </div>
-      <div class="card">
-        <h3>2. Водители получают предложения</h3>
-        <p>
-          Проверенные водители видят доступные грузы, предлагаемые ставки и оптимальные маршруты в одном месте, а не в десяти разных чатах.
-        </p>
-      </div>
-      <div class="card">
-        <h3>3. ИИ оптимизирует поездку</h3>
-        <p>
-          RoYo рекомендует цену, маршрут и обратные загрузки, чтобы сократить порожний пробег и увеличить доход с километра.
-        </p>
-      </div>
-    </div>
-  </section>
+    <div class="hero-card">
+      <h2>Сводка по коридорам (live)</h2>
+      <ul id="corridor-list"></ul>
+      <div class="hero-card-footer">
+        Работает на базе ИИ-движка RoYo (демо-данные).
+      </div>
+    </div>
+  </section>
 
-    <section id="features" class="section alt">
-    <h2>Ключевые Функции</h2>
-    <div class="grid-3">
-      <div class="card">
-        <h3>Грузовая Торговая Площадка</h3>
-        <p>
-          Единый интерфейс, где встречаются грузоотправители, водители и владельцы автопарков. Фильтр по маршруту, типу груза, транспортному средству и цене.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Отслеживание в Реальном Времени</h3>
-        <p>
-          Видите каждый грузовик на карте, статус каждой партии в реальном времени, расчетное время прибытия и оповещения об исключениях.
-        </p>
-      </div>
-      <div class="card">
-        <h3>ИИ-Маршрутизация и Ценообразование</h3>
-        <p>
-          RoYo предлагает лучшую цену и маршрут на основе топлива, спроса, задержек на границах и исторических данных.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Панель для Автопарков и Водителей</h3>
-        <p>
-          Управляйте несколькими грузовиками, назначайте поездки, контролируйте использование и отслеживайте производительность с помощью простой приборной панели.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Цифровые Документы</h3>
-        <p>
-          Храните CMR, счета, контракты и подтверждения доставки в одном месте. Больше никаких потерянных бумаг или хаоса в WhatsApp.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Готовность к Мобильным Платформам</h3>
-        <p>
-          Тот же бэкэнд будет питать нативные приложения iOS и Android для водителей и грузоотправителей, как только веб-MVP станет стабильным.
-        </p>
-      </div>
-    </div>
-  </section>
+  <section id="how-it-works" class="section">
+    <h2>Как работает RoYo</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>1. Грузоотправитель размещает груз</h3>
+        <p>
+          Пункт отправления и назначения, тип груза, вес, предпочтительное время —
+          всё вводится менее чем за 30 секунд через веб-приложение.
+        </p>
+      </div>
+      <div class="card">
+        <h3>2. Водители получают предложения</h3>
+        <p>
+          Проверенные водители видят доступные грузы, предлагаемые ставки и
+          оптимальные маршруты в одном окне, а не в десятке разных чатов.
+        </p>
+      </div>
+      <div class="card">
+        <h3>3. ИИ оптимизирует поездку</h3>
+        <p>
+          RoYo рекомендует цену, маршрут и обратные загрузки, чтобы сократить
+          порожний пробег и увеличить доход с километра.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <section id="dashboard" class="section">
-    <h2>Демо Веб-Приложения – Грузы и Грузовики</h2>
-    <div class="dashboard">
-      <div class="board">
-        <h3>Доступные Грузы</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Откуда</th>
-              <th>Куда</th>
-              <th>Груз</th>
-              <th>Ставка (USD)</th>
-              <th>Действие</th>
-            </tr>
-          </thead>
-          <tbody id="load-table-body">
-                      </tbody>
-        </table>
-      </div>
-      <div class="board">
-        <h3>Доступные Грузовики</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Водитель</th>
-              <th>Транспорт</th>
-              <th>Местоположение</th>
-              <th>Вместимость (т)</th>
-              <th>Статус</th>
-            </tr>
-          </thead>
-          <tbody id="truck-table-body">
-                      </tbody>
-        </table>
-      </div>
-    </div>
-    <p class="hint">
-      Это только фронтенд-демо. Позже мы подключим этот интерфейс к реальному бэкэнду API, а затем к нативным мобильным приложениям.
-    </p>
-  </section>
+  <section id="features" class="section alt">
+    <h2>Ключевые функции</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Грузовая платформа</h3>
+        <p>
+          Единый интерфейс, где встречаются грузоотправители, водители и владельцы
+          автопарков. Фильтрация по маршруту, типу груза, транспорту и цене.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Отслеживание в реальном времени</h3>
+        <p>
+          Видите каждый грузовик на карте, статус каждой партии в реальном времени,
+          расчётное время прибытия и уведомления об исключениях.
+        </p>
+      </div>
+      <div class="card">
+        <h3>ИИ-маршрутизация и ценообразование</h3>
+        <p>
+          RoYo предлагает оптимальную цену и маршрут на основе стоимости топлива,
+          текущего спроса, задержек на границах и исторических данных.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Панель для автопарков и водителей</h3>
+        <p>
+          Управляйте несколькими грузовиками, назначайте рейсы, контролируйте
+          загрузку и эффективность через простую панель управления.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Цифровые документы</h3>
+        <p>
+          Храните CMR, счета, контракты и подтверждения доставки в одном месте.
+          Больше никаких потерянных бумаг и хаоса в WhatsApp.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Готовность к мобильным платформам</h3>
+        <p>
+          Тот же бэкэнд будет обслуживать нативные приложения iOS и Android для
+          водителей и грузоотправителей, как только веб-MVP станет стабильным.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <section id="about" class="about-section">
-    <h2>О RoYo</h2>
-    <p>
-      RoYo создает первую логистическую сеть на базе ИИ для Центральной Азии и Развивающаяся Европа.
-      Наша миссия — сократить порожний пробег, увеличить доходы водителей и создать единую
-      цифровую грузовую инфраструктуру для всего региона.
-    </p>
-    <p>
-      Мы сочетаем ИИ-маршрутизацию, отслеживание в реальном времени и прозрачное сопоставление грузов для модернизации
-      региональной торговли и повышения эффективности каждого километра.
-    </p>
-  </section>
+  <section id="dashboard" class="section">
+    <h2>Демо веб-приложения — доска грузов и транспорта</h2>
+    <div class="dashboard">
+      <div class="board">
+        <h3>Доступные грузы</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Откуда</th>
+              <th>Куда</th>
+              <th>Груз</th>
+              <th>Ставка (USD)</th>
+              <th>Действие</th>
+            </tr>
+          </thead>
+          <tbody id="load-table-body"></tbody>
+        </table>
+      </div>
 
-    <section id="investors" class="investors-section">
-    <h2>Для Инвесторов и Правительственных Партнеров</h2>
-    <p>
-      RoYo в настоящее время привлекает Pre-Seed / Seed раунд и готовит заявки на международные
-      транспортные и инновационные гранты для масштабирования по Центральной Азии и Развивающаяся Европа.
-    </p>
-    <p>
-      Мы приветствуем институциональных партнеров, логистических операторов, инновационные фонды, государственные органы
-      и организации развития, заинтересованные в цифровизации грузовых коридоров.
-    </p>
-  </section>
+      <div class="board">
+        <h3>Доступные грузовики</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Водитель</th>
+              <th>Транспорт</th>
+              <th>Местоположение</th>
+              <th>Вместимость (т)</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody id="truck-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="hint">
+      Это только фронтенд-демо. Позже мы подключим этот интерфейс к реальному
+      бэкэнд-API, а затем к нативным мобильным приложениям.
+    </p>
+  </section>
 
-    <section id="contact" class="section alt contact-section">
-    <h2>Контакты RoYo</h2>
+  <section id="about" class="about-section">
+    <h2>О RoYo</h2>
+    <p>
+      RoYo создаёт первую логистическую сеть на базе ИИ для Центральной Азии
+      и развивающейся Европы. Наша миссия — сократить порожний пробег, увеличить
+      доходы водителей и создать единую цифровую грузовую инфраструктуру
+      для всего региона.
+    </p>
+    <p>
+      Мы объединяем ИИ-маршрутизацию, отслеживание в реальном времени и прозрачное
+      сопоставление грузов, чтобы модернизировать региональную торговлю и
+      сделать каждый километр более эффективным.
+    </p>
+  </section>
 
-    <div class="contact-grid">
-      <div>
-        <p><strong>Email:</strong> <a href="mailto:Murodkazakov13@gmail.com">Murodkazakov13@gmail.com</a></p>
-        <p><strong>Telegram:</strong> <a href="https://t.me/Murodkazakov13" target="_blank">t.me/Murodkazakov13</a></p>
-        <p><strong>Телефон:</strong> <a href="tel:+998909423313">+998 90 942 33 13</a></p>
-        <p><strong>Забронировать звонок:</strong> (Calendly – скоро)</p>
-      </div>
+  <section id="investors" class="investors-section">
+    <h2>Для инвесторов и госорганов</h2>
+    <p>
+      Сейчас RoYo привлекает Pre-Seed / Seed раунд и готовит заявки на
+      международные транспортные и инновационные гранты для масштабирования
+      по Центральной Азии и развивающейся Европе.
+    </p>
+    <p>
+      Мы открыты для институциональных партнёров, логистических операторов,
+      инновационных фондов, государственных органов и организаций развития,
+      заинтересованных в цифровизации грузовых коридоров.
+    </p>
+  </section>
 
-      <div>
-        <p>
-          Если вы инвестор, логистический партнер или ранний клиент, оставьте свой email, и мы поделимся приватным доступом к демо.
-        </p>
-        <form class="contact-form" onsubmit="handleContactSubmit(event)">
-          <input type="text" id="name" placeholder="Ваше имя" required />
-          <input type="email" id="email" placeholder="Ваш Email" required />
-          <textarea id="message" placeholder="Расскажите, кто вы и как хотели бы работать с RoYo"></textarea>
-          <button type="submit" class="btn primary">Отправить</button>
-        </form>
-        <p id="contact-status" class="status"></p>
-      </div>
-    </div>
-  </section>
+  <section id="contact" class="section alt contact-section">
+    <h2>Контакты RoYo</h2>
 
-  <footer class="footer">
-    © <span id="year"></span> RoYo Logistics – Интеллектуальные Грузоперевозки для Центральной Азии и Развивающаяся Европа
-  </footer>
+    <div class="contact-grid">
+      <div>
+        <p><strong>Email:</strong> <a href="mailto:Murodkazakov13@gmail.com">Murodkazakov13@gmail.com</a></p>
+        <p><strong>Telegram:</strong> <a href="https://t.me/Murodkazakov13" target="_blank">t.me/Murodkazakov13</a></p>
+        <p><strong>Телефон:</strong> <a href="tel:+998909423313">+998 90 942 33 13</a></p>
+        <p><strong>Забронировать звонок:</strong> (Calendly — скоро)</p>
+      </div>
 
-  <script src="app.js"></script>
+      <div>
+        <p>
+          Если вы инвестор, логистический партнёр или ранний клиент, оставьте свой email,
+          и мы поделимся приватным доступом к демо.
+        </p>
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+          <input type="text" id="name" placeholder="Ваше имя" required />
+          <input type="email" id="email" placeholder="Ваш email" required />
+          <textarea id="message" placeholder="Расскажите, кто вы и как хотели бы работать с RoYo"></textarea>
+          <button type="submit" class="btn primary">Отправить</button>
+        </form>
+        <p id="contact-status" class="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="year"></span> RoYo Logistics – интеллектуальные грузоперевозки
+    для Центральной Азии и развивающейся Европы
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
